@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id "org.jetbrains.kotlin.kapt"
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "md.endava.internship.budgetplanner"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    buildTypes.each {it.buildConfigField 'String', 'BUDGET_PLANNER_API_URL', BUDJET_PLANNER_URL_API}
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    //App dependencies
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+
+    //Database management
+    implementation "androidx.datastore:datastore:$data_store"
+    implementation "androidx.datastore:datastore-preferences:$datastore_preferences"
+
+    // KTX
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    //Architecture Components
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_common_version"
+
+    //HTTP API
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+
+    //Coroutine for Asynchronous programming
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    //Local unit tests
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "io.mockk:mockk:$mockk_version"
+
+    //Android unit tests
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit_verison"
+    androidTestImplementation "io.mockk:mockk-android:$mockk_version"
+
+    //Hilt
+    implementation "com.google.dagger:hilt-android:$ext_hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$ext_hilt_version"
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //Gson
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //Keyboard
+    implementation "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:$keyboard_version"
+
+    implementation 'joda-time:joda-time:2.10.14'
+
+    //
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+}

@@ -1,0 +1,49 @@
+trigger:
+- main
+pool:
+  vmImage: 'ubuntu-20.04'
+
+stages:
+ - stage: CodeTesting
+   jobs:
+   - job: TestCodeInSonar
+     steps:
+      - task: Gradle@3
+        inputs:
+          gradleWrapperFile: 'gradlew'
+          tasks: 'test'
+          publishJUnitResults: true
+          testResultsFiles: '**/TEST-*.xml'
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: '1.11'
+          sonarQubeRunAnalysis: false
+          spotBugsAnalysis: false
+
+ - stage: APKBuild
+   jobs:
+   - job: BuildAPKwithGradle
+     steps:
+      - task: Gradle@2
+        inputs:
+          gradleWrapperFile: 'gradlew'
+          tasks: 'build'
+          publishJUnitResults: false
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: '1.11'
+          gradleOptions: '-Xmx3072m'
+          sonarQubeRunAnalysis: false
+          spotBugsAnalysis: false
+
+ - stage: ArtifactUpload
+   jobs:
+   - job: UploadAPKwithcurl
+     steps:
+      - task: cURLUploader@2
+        inputs:
+          files: '**/app-debug.apk'
+          authType: 'UserAndPass'
+          username: '$(uname)'
+          password: '$(upassword)'
+          url: 'https://nexus.demo.think-it.work/repository/Budger-planner-a/'
+          remotePath: '/$(Build.BuildId)/'
+          options: '--insecure'

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="80dp"
+    android:layout_marginLeft="80dp"
+    android:background="@drawable/background_dialog">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        app:indicatorColor="@color/white"
+        android:id="@+id/pb_loading"
+        android:indeterminate="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pb_loading"
+        android:text="@string/text_loading_dialog_please_wait"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:text="@string/text_loading_dialog_message"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:paddingBottom="30dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

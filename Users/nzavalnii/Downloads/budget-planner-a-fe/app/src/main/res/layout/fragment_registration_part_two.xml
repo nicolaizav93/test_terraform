@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background">
+
+        <TextView
+            android:id="@+id/greetings_part_one_text"
+            style="@style/ButtonBudgetPlannerTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="90dp"
+            android:maxWidth="250dp"
+            android:maxHeight="130dp"
+            android:text="Let’s get you started"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/first_name_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="93dp"
+            app:errorIconDrawable="@null"
+            app:errorIconTint="@null"
+            android:theme="@style/TextInputLayoutOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/greetings_part_one_text"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/first_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name"
+                android:inputType="text"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                android:paddingStart="0dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="0dp"
+                android:textColorHint="#6D6789" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/last_name_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="60dp"
+            android:hint="@string/last_name"
+            app:errorIconDrawable="@null"
+            app:errorIconTint="@null"
+            android:theme="@style/TextInputLayoutOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_name_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/last_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_registration_last_name"
+                android:inputType="text"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                android:paddingStart="0dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="0dp"
+                android:textColorHint="#6D6789" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:layout_width="208dp"
+            android:layout_height="208dp"
+            android:layout_marginStart="224dp"
+            android:layout_marginTop="-58dp"
+            android:src="@drawable/ellipse_little"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="385dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="172dp"
+            android:layout_marginEnd="218.5dp"
+            android:layout_marginBottom="290dp"
+            android:src="@drawable/ellipse_big"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/step_text"
+            style="@style/ButtonBudgetPlannerTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="61dp"
+            android:text="@string/text_registration_step_1"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/continue_button_two"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/continue_button_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="40dp"
+            android:alpha="0.5"
+            android:clickable="false"
+            android:background="@drawable/button_background"
+            android:text="@string/text_next"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

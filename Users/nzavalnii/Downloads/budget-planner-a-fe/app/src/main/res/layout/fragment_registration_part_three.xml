@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/part_three_reg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background">
+
+        <TextView
+            android:id="@+id/greetings_part_two_text"
+            style="@style/ButtonBudgetPlannerTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="90dp"
+            android:maxWidth="250dp"
+            android:maxHeight="130dp"
+            android:text="@string/let_s_get_you_started"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="208dp"
+            android:layout_height="208dp"
+            android:layout_marginStart="224dp"
+            android:layout_marginTop="-58dp"
+            android:src="@drawable/ellipse_little"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="385dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="172dp"
+            android:layout_marginEnd="218.5dp"
+            android:layout_marginBottom="290dp"
+            android:src="@drawable/ellipse_big"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.App.ExposedDropdownMenu"
+            android:id="@+id/dropdown_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="111dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/greetings_part_two_text">
+
+            <AutoCompleteTextView
+                android:id="@+id/suggestion_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#CCFFFFFF"
+                android:textSize="16sp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/step_text"
+            style="@style/ButtonBudgetPlannerTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="636dp"
+            android:layout_marginBottom="61dp"
+            android:text="@string/step_2_of_2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/end_registration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/initial_balance_text"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/dropdown_menu"
+            app:layout_constraintTop_toBottomOf="@id/dropdown_menu"
+            android:text="@string/initial_balance"
+            android:textColor="@color/text_hide_color"
+            android:layout_marginTop="69dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:focusableInTouchMode="true"
+            android:id="@+id/money_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:boxStrokeWidth="0dp"
+            android:imeOptions="actionDone"
+            app:boxStrokeWidthFocused="0dp"
+            app:layout_constraintStart_toStartOf="@id/initial_balance_text"
+            app:layout_constraintTop_toBottomOf="@id/initial_balance_text"
+            android:theme="@style/TextInputLayoutOverlay">
+            <com.google.android.material.textfield.TextInputEditText
+                android:imeOptions="actionDone"
+                android:id="@+id/amount_money"
+                android:hint="@string/money_text"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:textColorHint="#6D6789"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/end_registration"
+            android:alpha="0.5"
+            android:clickable="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/button_background"
+            android:text="@string/text_next"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

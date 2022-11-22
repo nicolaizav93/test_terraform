@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splash_fragment">
+
+
+    <fragment
+        android:id="@+id/log_in_fragment"
+        android:name="md.endava.internship.budgetplanner.ui.login.LogInFragment"
+        android:label="@string/fragment_log_in_label"
+        tools:layout="@layout/fragment_log_in">
+
+        <action
+            android:id="@+id/action_log_in_fragment_to_registration_part_one_fragment"
+            app:destination="@id/registration_nested_navigation" />
+        <action
+            android:id="@+id/action_log_in_fragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="md.endava.internship.budgetplanner.ui.splashscreen.SplashFragment"
+        android:label="@string/fragment_splash_label"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_fragment_to_registration_part_one_fragment"
+            app:destination="@id/registration_nested_navigation" />
+        <action
+            android:id="@+id/action_splash_fragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="md.endava.internship.budgetplanner.ui.dashboard.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_transaction_fragment"
+            app:destination="@id/transaction_fragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_splash_fragment"
+            app:destination="@id/splash_fragment" />
+        <action
+            android:id="@+id/action_dashboard_fragment_to_transaction_details_fragment"
+            app:destination="@id/transactionDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transaction_fragment"
+        android:name="md.endava.internship.budgetplanner.ui.transaction.TransactionFragment"
+        android:label="@string/fragment_transaction_label"
+        tools:layout="@layout/fragment_transaction">
+        <action
+            android:id="@+id/action_transaction_fragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+
+    <navigation android:id="@+id/registration_nested_navigation"
+        app:startDestination="@id/registration_part_one_fragment">
+        <fragment
+            android:id="@+id/registration_part_one_fragment"
+            android:name="md.endava.internship.budgetplanner.ui.registration.RegistrationPartOneFragment"
+            android:label="@string/fragment_registration_part_one_label"
+            tools:layout="@layout/fragment_registration_part_one">
+            <action
+                android:id="@+id/action_registration_part_one_fragment_to_registration_part_two_fragment"
+                app:destination="@id/registration_part_two_fragment" />
+            <action
+                android:id="@+id/action_registration_part_one_fragment_to_log_in_fragment"
+                app:destination="@id/log_in_fragment" />
+
+        </fragment>
+        <fragment
+            android:id="@+id/registration_part_two_fragment"
+            android:name="md.endava.internship.budgetplanner.ui.registration.RegistrationPartTwoFragment"
+            android:label="@string/fragment_registration_part_two_label"
+            tools:layout="@layout/fragment_registration_part_two">
+            <action
+                android:id="@+id/action_registration_part_two_fragment_to_registration_part_three_fragment"
+                app:destination="@id/registration_part_three_fragment" />
+            <action
+                android:id="@+id/action_registration_part_two_fragment_to_registration_part_one_fragment"
+                app:destination="@id/registration_part_one_fragment" />
+            <argument android:name="last_name"
+                app:argType="string"
+                android:defaultValue="none" />
+            <argument android:name="first_name"
+                app:argType="string"
+                android:defaultValue="none" />
+        </fragment>
+        <fragment
+            android:id="@+id/registration_part_three_fragment"
+            android:name="md.endava.internship.budgetplanner.ui.registration.RegistrationPartThreeFragment"
+            android:label="@string/fragment_registration_part_three_label"
+            tools:layout="@layout/fragment_registration_part_three">
+
+            <action
+                android:id="@+id/action_registration_part_three_fragment_to_welcome_screen_fragment"
+                app:destination="@id/welcome_screen_fragment" />
+            <action
+                android:id="@+id/action_registration_part_three_fragment_to_registration_part_two_fragment"
+                app:destination="@id/registration_part_two_fragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/welcome_screen_fragment"
+            android:name="md.endava.internship.budgetplanner.ui.welcomescreen.WelcomeScreenFragment"
+            android:label="@string/fragment_welcome_screen_label"
+            tools:layout="@layout/fragment_welcome_screen">
+            <action
+                android:id="@+id/action_welcome_screen_fragment_to_log_in_fragment"
+                app:destination="@id/log_in_fragment" />
+        </fragment>
+    </navigation>
+    <fragment
+        android:id="@+id/transactionDetailsFragment"
+        android:name="md.endava.internship.budgetplanner.ui.transaction.details.TransactionDetailsFragment"
+        android:label="TransactionDetailsFragment"
+        tools:layout="@layout/fragment_transaction_details"/>
+
+</navigation>

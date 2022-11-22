@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="items" tools:ignore="ExtraTranslation">
+        <item>Android Developer</item>
+        <item>iOS Developer</item>
+        <item>Java Developer</item>
+        <item>Tester</item>
+        <item>Project Manager</item>
+    </string-array>
+</resources>

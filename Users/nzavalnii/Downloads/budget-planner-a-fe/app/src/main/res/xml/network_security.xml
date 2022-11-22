@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+<domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">http://ad7a9e5111c4f4dfbac6f1ccb51441d0-1005594510.eu-central-1.elb.amazonaws.com</domain>
+</domain-config>
+</network-security-config>

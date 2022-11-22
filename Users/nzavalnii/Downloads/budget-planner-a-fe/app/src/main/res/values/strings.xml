@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">BudgetPlanner</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="initial_balance">Initial balance</string>
+    <string name="money_text">$0.00</string>
+    <string name="password">Enter your password</string>
+    <string name="email">Enter your email</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="continue_text">Continue</string>
+    <string name="step_2_of_2">Step 2 of 2</string>
+    <string name="let_s_get_you_started">Let’s get you started</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="content_description_logo_splash_fragment">logo</string>
+    <string name="fragment_log_in_label">fragment_log_in</string>
+    <string name="auth_sign_up_text">sign up</string>
+    <string name="auth_access_account_text">Access your account</string>
+    <string name="auth_sign_in_button_text">Sign In</string>
+    <string name="auth_password_hint">Enter your password</string>
+    <string name="auth_login_hint">Enter your email</string>
+    <string name="text_error_dialog_authentication_failed">Authentication Failed!</string>
+    <string name="button_error_dialog_dismiss">Got it!</string>
+    <string name="text_loading_dialog_please_wait">Please wait…</string>
+    <string name="text_loading_dialog_message">Your request is being processed.</string>
+    <string name="text_sign_in">sign in</string>
+    <string name="text_create_your_account">Create your account</string>
+    <string name="text_registration_step_1">Step 1 of 2</string>
+    <string name="text_next">next</string>
+    <string name="hint_registration_last_name">Last name</string>
+    <string name="preview_welcome_title">Welcome!</string>
+    <string name="sub_preview_extra_msg">Your account has been successfully registered and you can now proceed to sign in.!</string>
+    <string name="bottom_text_title">PROCEED TO SIGN IN!</string>
+
+    <string name="amount_res_bottom">$%s</string>
+    <string name="symbol_dollar">$</string>
+
+    <string name="fragment_splash_label">fragment_splash</string>
+    <string name="fragment_registration_part_one_label">registration_part_one_fragment</string>
+    <string name="fragment_registration_part_two_label">fragment_registration_part_two</string>
+    <string name="fragment_registration_part_three_label">registration_part_three_fragment</string>
+    <string name="fragment_welcome_screen_label">welcome_screen_fragment</string>
+    <string name="fragment_transaction_label">transaction_fragment</string>
+    <string name="food_and_drink_category">Food and drink</string>
+    <string name="entertainment_category">Entertainment</string>
+    <string name="taxes_and_paymnets_category">Taxes and payments</string>
+    <string name="shopping_cateogry">Shopping</string>
+    <string name="sports_category">Sports</string>
+    <string name="others_category">Others</string>
+    <string name="salaries_and_bonuses_category">Salaries and bonuses</string>
+    <string name="investments_category">Investments</string>
+    <string name="payments_and_others_category">Payments and others</string>
+    <string name="succes_transaction_message">A new %1$s of %2$s has been added</string>
+    <string name="success_registration_message">"Something went wrong"</string>
+    <string name="transaction_count">%1$s  transactions</string>
+    <string name="add_new_transaction_text">+ ADD NEW TRANSACTION</string>
+    <string name="empty_list_text">You haven’t added any expenses for this month yet.</string>
+
+</resources>

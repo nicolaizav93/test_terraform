@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/item_transaction_detail_rectangle">
+
+        <TextView
+            android:id="@+id/top_text_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="McDonalds" />
+
+        <TextView
+            android:id="@+id/bottom_text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E3E3E3"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/top_text_transaction"
+            app:layout_constraintTop_toBottomOf="@+id/top_text_transaction"
+            tools:text="16/03/2021" />
+
+
+        <TextView
+            android:id="@+id/left_text_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$14.45" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
